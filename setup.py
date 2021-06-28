@@ -34,12 +34,13 @@ setup(
     ),
     author='Heinz Stecher',
     author_email='kai-solutions@protonmail.com',
-    url='https://github.com/kai-solutions/pypelight',
+    url='https://github.com/kai-solutions/pypelight-dev',
+    download_url='',
     use_scm_version=True,
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
+    packages=find_packages('pypelight'),
+    package_dir={'': 'pypelight'},
     py_modules=[splitext(basename(path))[0]
-                for path in glob('src/*.py')],
+                for path in glob('pypelight/*.py')],
     include_package_data=True,
     zip_safe=False,
     classifiers=[
