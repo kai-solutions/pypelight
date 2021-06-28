@@ -34,7 +34,7 @@ setup(
     ),
     author='Heinz Stecher',
     author_email='kai-solutions@protonmail.com',
-    url='https://github.com/kai-solutions/pypelight-dev',
+    url='https://github.com/kai-solutions/pypelight',
     download_url='',
     use_scm_version=True,
     packages=find_packages('pypelight'),
