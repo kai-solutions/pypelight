@@ -1,0 +1,7 @@
+pandas
+numpy
+datetime
+sqlalchemy
+
+[interactive]
+jupyter

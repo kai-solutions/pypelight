@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: pypelight
+Version: 0.1.dev2+g3cdad9e.d20210628
+Summary: Simple tools for building Python ETL pipelines
+Home-page: https://github.com/kai-solutions/pypelight
+Author: Heinz Stecher
+Author-email: kai-solutions@protonmail.com
+License: MIT License
+Project-URL: Changelog, 
+Project-URL: Issue Tracker, 
+Description: # etl tools
+        
+        # Toolset created for maximizing efficiency on creating ETL pipelines using Python
+        # Supports quick and controllable flows
+        # Steps to install package:
+        	# Open up a terminal (Anaconda Prompt works good)
+        	# Change path to etl_tools
+        	# Install using setup.py. Command is: pip install .
+        	
+        # Developed by Heinz Stecher Monge. Business Intelligence Specialist
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intented Audience :: Developers
+Classifier: Licence :: MIT Licence
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*
+Provides-Extra: interactive
