@@ -1,9 +1,13 @@
+.gitignore
+pyproject.toml
 setup.cfg
 setup.py
+dist/pypelight-0.1.dev2+g3cdad9e.d20210628-py2.py3-none-any.whl
 docs/CHANGELOG.md
 docs/LICENCE.txt
 docs/MANIFEST.in
 docs/README.md
+pypelight/__pycache__/date_manager.cpython-38.pyc
 pypelight/core/__init__.py
 pypelight/core/connector.py
 pypelight/core/date_manager.py

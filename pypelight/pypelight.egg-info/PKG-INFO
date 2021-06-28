@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pypelight
-Version: 0.1.dev2+g3cdad9e.d20210628
+Version: 0.1.dev6+g8797407.d20210628
 Summary: Simple tools for building Python ETL pipelines
 Home-page: https://github.com/kai-solutions/pypelight
 Author: Heinz Stecher
@@ -8,17 +8,6 @@ Author-email: kai-solutions@protonmail.com
 License: MIT License
 Project-URL: Changelog, 
 Project-URL: Issue Tracker, 
-Description: # etl tools
-        
-        # Toolset created for maximizing efficiency on creating ETL pipelines using Python
-        # Supports quick and controllable flows
-        # Steps to install package:
-        	# Open up a terminal (Anaconda Prompt works good)
-        	# Change path to etl_tools
-        	# Install using setup.py. Command is: pip install .
-        	
-        # Developed by Heinz Stecher Monge. Business Intelligence Specialist
-        
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intented Audience :: Developers
@@ -34,3 +23,24 @@ Classifier: Programming Language :: Python :: Implementation :: CPython
 Classifier: Programming Language :: Python :: Implementation :: PyPy
 Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*
 Provides-Extra: interactive
+
+## pypelight: a toolbox for creating quick and efficient data pipelines
+
+### What is pypelight?
+It is a toolset created for maximizing efficiency on creating ETL pipelines using Python. <b>pypelight</b> aims to facilitate a comprehensive framework for extracting, transforming and loading data in an easy manner. This library saves you headaches by removing abstraction in the process and simplifying development.
+
+### Main features
+
+### Where to find pypelight
+The source code is currently hosted in Github at: https://github.com/kai-solutions/pypelight
+
+Binary installers for the latest released version are available at the <a target="_blank" href="https://pypi.org/project/pypelight">Python Package Index (PyPi)</a>
+
+	pip install pypelight
+
+### Installation from sources:
+	pip install .
+	
+#### Developed by Heinz Stecher Monge. Business Intelligence Specialist.
+
+

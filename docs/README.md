@@ -6,7 +6,7 @@ It is a toolset created for maximizing efficiency on creating ETL pipelines usin
 ### Main features
 
 ### Where to find pypelight
-The source code is currently hosted in Github at: https://github.com/kai-solutions/pypelight-dev
+The source code is currently hosted in Github at: https://github.com/kai-solutions/pypelight
 
 Binary installers for the latest released version are available at the <a target="_blank" href="https://pypi.org/project/pypelight">Python Package Index (PyPi)</a>
 
