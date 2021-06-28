@@ -1,10 +1,18 @@
-# etl tools
+## pypelight: etl toolbox for creating quick and efficient data pipelines
 
-# Toolset created for maximizing efficiency on creating ETL pipelines using Python
-# Supports quick and controllable flows
-# Steps to install package:
-	# Open up a terminal (Anaconda Prompt works good)
-	# Change path to etl_tools
-	# Install using setup.py. Command is: pip install .
+### What is pypelight?
+It is a toolset created for maximizing efficiency on creating ETL pipelines using Python. <em>pypelight</em> aims to facilitate a comprehensive framework for extracting, transforming and loading data in an easy manner. This library saves you headaches by removing 
+
+### Main features
+
+### Where to find pypelight
+The source code is currently hosted in Github at: https://github.com/kai-solutions/pypelight-dev
+
+Binary installers for the latest released version are available at the <a target="_blank" href="https://pypi.org/project/pypelight">Python Package Index (PyPi)</a>
+
+	# pip install pypelight
+
+### Installation from sources:
+	# pip install .
 	
-# Developed by Heinz Stecher Monge. Business Intelligence Specialist
+#### Developed by Heinz Stecher Monge. Business Intelligence Specialist
