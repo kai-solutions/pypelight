@@ -1,17 +1,17 @@
-import os, re, fmatch, getpass, shutil
+import os, re, fnmatch, getpass, shutil
 
 class Path():
 
     def __init__(self):
         self.root_path = os.path.abspath(os.sep)
         self.current_path = os.getcwd()
-        self.exclude = [
+        self.excludes = [
             os.path.join(self.root_path, 'Lotus'),
             os.path.join(self.root_path, '$RECYCLE_BIN'),
             os.path.join(self.root_path, 'Users\\Public'),
             os.path.join(self.root_path, 'Users', getpass.getuser(), 'AppData')
         ]
-        self.excludes = r'|'.join([fmatch.translate(x) for x in self.excludes]) or r'$.'
+        self.excludes = r'|'.join([fnmatch.translate(x) for x in self.excludes]) or r'$.'
 
     def project_root(self, levels = 1):
         if levels <= 2:

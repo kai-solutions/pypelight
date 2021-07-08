@@ -6,8 +6,9 @@ import shutil
 import datetime
 from timeit import default_timer as timer
 from sqlalchemy import types
-from etl_tools.path_setup import create_path
-from etl_tools.duplicate_tester import clean_df_db_dups
+from core.path_setup import create_path
+from core.duplicate_tester import clean_df_db_dups
+from pyodbc import OperationalError
 
 '''ETL toolset that allows construction of easy work flows'''
 
@@ -166,9 +167,9 @@ def validate_folder_files(folder_path, folder_date, validation_files):
     for root, dirs, files in os.walk(folder_path):
         if os.path.basename(root) == folder_date:
             matching = [s for s in files if any(
-                validation_file in s for validation_file in validations_files
+                validation_file in s for validation_file in validation_files
             )]
-            if len(matching) =! len(validation_files):
+            if len(matching) != len(validation_files):
                 non_matches = [validation_file for validation_file in validation_files if not any(
                     validation_file in match for match in matching
                 )]
@@ -206,3 +207,29 @@ def create_mirror_path(origin, destination, copy_date=None, delete_first=False):
     # creates route in folder in case it doesn't exist
     create_path(origin_folder, destionation_folder)
     # copy
+
+
+def frag_load(df, connection, dtype, tablename, div=15, check=None, create_table=False, tries=10):
+    df_fragments = math.ceil(df.shape[0] / div)
+    i = 0
+    print(f'Data will be loaded in {df_fragments} fragments')
+    if create_table:
+        with connection as conn:
+            conn.create(dtype, tablename, None)
+
+    for attempt in range(tries):
+        try:
+            with connection as conn:
+                print('Starting process')
+                for a in range(attempt, div):
+                    fragdf = df[i: i + df_fragments]
+                    df.load(fragdf, conn.engine, tablename,
+                            dtype=dtype, schema='dbo', check=check)
+                    i += df_fragments + 1
+                    print('{0:.0%}'.format(i / df.shape[0]), 'progress')
+        except OperationalError as e:
+            if attempt < tries - 1:
+                continue
+            else:
+                raise
+        break

@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import math
+import os
 from sqlalchemy import create_engine
 from sqlalchemy import types
+from core.flow_tools import import_scripts
 
 
 class Connection(object):
@@ -124,6 +126,17 @@ class SQLServer(Connection):
 
         def __repr__(self):
             return self.database_uri
+
+        def create_index(tablename, params, type='clustered'):
+            sqls_dict = import_scripts(os.path.join(os.path.abspath(
+                os.path.join(os.getcwd(), '..'))), 'sql_tools')
+            self.tablename = f'{tablename}'
+            with self.connector as conn:
+                if type(params) == list:
+                    params = [f'(\'{item}\')' for item in params]
+                    print('creating nonclustered index on', tablename)
+                    conn.execute(sqls['create_nonclustered_index.sql'].format(
+                        tablename, ','.join(params)))
 
 
 def sqlcol(dfparam, fraction_size=1, varchar_multiplier=1):
